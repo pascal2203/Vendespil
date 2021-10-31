@@ -56,8 +56,14 @@ function CardClicked(IdName, NewPicture){
     FlippedAmount++
     
     if (FlippedAmount == 2){
-        ChangeImage(IdName,'BackSideOfCard.jpg')          
-        ChangeImage(IdNameOld,'BackSideOfCard.jpg')
+
+        setTimeout(() => {
+            FlipCards(IdName,IdNameOld,'BackSideOfCard.jpg')
+        },  2000);
+
+        //FlipCards(IdName,IdNameOld,'BackSideOfCard.jpg')
+        /*ChangeImage(IdName,'BackSideOfCard.jpg')          
+        ChangeImage(IdNameOld,'BackSideOfCard.jpg')*/
         FlippedAmount = 0
     
 
@@ -69,6 +75,14 @@ function CardClicked(IdName, NewPicture){
     
 
 
+}
+
+
+
+
+function FlipCards(IdName, IdNameOld){
+    ChangeImage(IdName,'BackSideOfCard.jpg')          
+    ChangeImage(IdNameOld,'BackSideOfCard.jpg')
 }
 /*function FlipBack(IdName,Oldpicture,IdNameOld){
     ChangeImage(IdName,Oldpicture)
