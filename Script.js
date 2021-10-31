@@ -49,14 +49,31 @@ for (i = 0; i < Cards.length; i++){
 
 
 
+var FlippedAmount = 0;
 
 function CardClicked(IdName, NewPicture){
     ChangeImage(IdName,NewPicture)
+    FlippedAmount++
+    
+    if (FlippedAmount == 2){
+        ChangeImage(IdName,'BackSideOfCard.jpg')          
+        ChangeImage(IdNameOld,'BackSideOfCard.jpg')
+        FlippedAmount = 0
+    
 
+    }
+    else if (FlippedAmount == 1){
+        return IdNameOld = IdName;
+    } 
+
+    
 
 
 }
-
+/*function FlipBack(IdName,Oldpicture,IdNameOld){
+    ChangeImage(IdName,Oldpicture)
+    ChangeImage(IdNameOld,Oldpicture)
+}*/
 
 
 /*function ChangeImage(OriginalPicture,NewPicture,UpgradeAmount, UpgradesNeeded){// Her har vi en funktion der fanger billedets id og ændrer det til et nyt når man har nok af upgraden
