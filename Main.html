@@ -2,13 +2,49 @@
 <html>
 <head>
     <head>
-        <script type="text/javascript" src="Script.js"></script>
         <title>Vendespil</title>
         <link rel = "stylesheet" href = "Style.css"/>
+        <script type="text/javascript" src="Script.js"></script>
+
     </head>
 </head>
 <body>
-    <canvas id="gameCanvas" width="900" height="700"></canvas>
+    <canvas id="canvas" width="900" height="700"></canvas>
+    <script src="CanvasLine.js"></script>
+    <script src="Script.js"></script>
+
+    <h1 style="font-size:60px;">Superhelte vendespil</h1>
+
+    <h2 style="font-size:25px;">Score:</h2>
+
+
+    <div id = "Card1" onclick="CardClicked('Card1Picture','HulkCard.jpg')"> 
+        <img id="Card1Picture" src="BackSideOfCard.jpg" width="155px"height="205px"/></div>
+    <div id = "Card2" onclick="CardClicked('Card2Picture','IronManCard.jpg')"> 
+        <img id="Card2Picture" src="BackSideOfCard.jpg" width="155px"height="205px"/></div>
+    <div id = "Card3" onclick="CardClicked('Card3Picture','SpidermanCard.jpg')"> 
+        <img id="Card3Picture" src="BackSideOfCard.jpg" width="155px"height="205px"/></div>
+    <div id = "Card4" onclick="CardClicked('Card4Picture','IronManCard.jpg')"> 
+        <img id="Card4Picture" src="BackSideOfCard.jpg" width="155px"height="205px"/></div>
+    <div id = "Card5" onclick="CardClicked('Card5Picture','SpidermanCard.jpg')"> 
+        <img id="Card5Picture" src="BackSideOfCard.jpg" width="155px"height="205px"/></div>
+    <div id = "Card6" onclick="CardClicked('Card6Picture','CaptainAmericaCard.jpg')"> 
+        <img id="Card6Picture" src="BackSideOfCard.jpg" width="155px"height="205px"/></div>
+    <div id = "Card7" onclick="CardClicked('Card7Picture','ThorCard.jpg')"> 
+        <img id="Card7Picture" src="BackSideOfCard.jpg" width="155px"height="205px"/></div>
+    <div id = "Card8" onclick="CardClicked('Card8Picture','CaptainAmericaCard.jpg')"> 
+        <img id="Card8Picture" src="BackSideOfCard.jpg" width="155px"height="205px"/></div>
+    <div id = "Card9" onclick="CardClicked('Card9Picture','HulkCard.jpg')"> 
+        <img id="Card9Picture" src="BackSideOfCard.jpg" width="155px"height="205px"/></div>
+    <div id = "Card10" onclick="CardClicked('Card10Picture','ThorCard.jpg')"> 
+        <img id="Card10Picture" src="BackSideOfCard.jpg" width="155px"height="205px"/></div>
+    <script>
+            function ChangeImage(OriginalPicture,NewPicture){// Her har vi en funktion der fanger billedets id og ændrer det til et nyt når man har nok af upgraden
+                var image = document.getElementById(OriginalPicture);//Her fanger vi det billed vi starter med
+                image.src = NewPicture;// Her ændrer vi billedet til det nye
+            }
+        </script>
+
 
 </body>
 </html>

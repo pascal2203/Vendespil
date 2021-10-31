@@ -1,13 +1,93 @@
 body {
     background: #111;
-    color: #f8f8f8;
+    color: #ffffff;
     background-image: url("HeroBackground.jpg");
 
   }
+
+  h1{
+      position: absolute;
+      top: 0px;
+      left: 480px 
+  }
+  h2{
+    position: absolute;
+    top: 0px;
+    left: 320px
+  }
   canvas {
-    background: #f8f8f8;
+    background: #e29e1e;
+    background-image: url("CanvasBackground.jpg");
     padding: 0;
     margin: 0 auto;
     margin-bottom: 1rem;
     display: block;
   }
+
+  #Card1 {
+    position: absolute;
+  top: 155px;
+  left: 340px;
+
+}
+
+#Card2 {
+    position: absolute;
+  top: 155px;
+  left: 510px;
+
+}
+#Card3 {
+    position: absolute;
+  top: 155px;
+  left: 680px;
+
+}
+
+#Card4 {
+    position: absolute;
+  top: 155px;
+  left: 850px;
+
+}
+#Card5 {
+    position: absolute;
+  top: 155px;
+  left: 1020px;
+
+}
+
+#Card6 {
+    position: absolute;
+  top: 455px;
+  left: 340px;
+
+}
+
+#Card7 {
+    position: absolute;
+    top: 455px;
+    left: 510px;
+
+}
+#Card8 {
+    position: absolute;
+    top: 455px;
+    left: 680px;
+  border: 1px;
+
+}
+
+#Card9 {
+    position: absolute;
+    top: 455px;
+    left: 850px;
+
+}
+#Card10 {
+    position: absolute;
+    top: 455px;
+    left: 1020px;
+
+}
+
