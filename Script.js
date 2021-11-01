@@ -39,24 +39,24 @@ for (i = 0; i < Cards.length; i++){
 function CardsCharacterChecker(CardNumber){
         debugger
 
-        if (Cards[CardNumber] == 1){
+        if (Cards[CardNumber] == 1 ||Cards[CardNumber] == 'CaptainAmericaCard.jpg'){
             Cards[CardNumber] = 'CaptainAmericaCard.jpg'
             return 'CaptainAmericaCard.jpg'
         }
     
-        else if (Cards[CardNumber] == 2){
+        else if (Cards[CardNumber] == 2||Cards[CardNumber] == 'HulkCard.jpg'){
             Cards[CardNumber] = 'HulkCard.jpg'
             return 'HulkCard.jpg'
         }
-        else if (Cards[CardNumber] == 3){
+        else if (Cards[CardNumber] == 3||Cards[CardNumber] == 'IronManCard.jpg'){
             Cards[CardNumber] = 'IronManCard.jpg'
             return 'IronManCard.jpg'
         }
-        else if (Cards[CardNumber] == 4){
+        else if (Cards[CardNumber] == 4||Cards[CardNumber] == 'SpiderManCard.jpg'){
             Cards[CardNumber] = 'SpiderManCard.jpg'
             return 'SpiderManCard.jpg'
         }
-        else if (Cards[CardNumber] == 5){
+        else if (Cards[CardNumber] == 5||Cards[CardNumber] == 'ThorCard.jpg'){
             Cards[CardNumber] = 'ThorCard.jpg'
             return 'ThorCard.jpg'
         }
