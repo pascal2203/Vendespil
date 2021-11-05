@@ -12,6 +12,7 @@ var Card8 = 0;
 var Card9 = 0;
 var Card10 = 0;
 var CardNumberOld = 0;
+var score = 0;
 
 var CardSignatures = [1,2,3,4,5,1,2,3,4,5];
 var Cards = [Card1,Card2,Card3,Card4,Card5,Card6,Card7,Card8,Card9,Card10];
@@ -61,10 +62,23 @@ function CardsCharacterChecker(CardNumber){
             return 'ThorCard.jpg'
         }
     }
-function CheckMatch(CardNumber,CardNumberOld){
 
-    if (CardNumber == CardNumberOld){
+function CheckMatch(CardNumber,CardNumberOld,IdName,IdNameOld){
+
+    if (Cards[CardNumber] == Cards[CardNumberOld]){
+        score++
+        Score.innerHTML = score;
+        FlippedAmount = 0;
+
+    }
+    
+    else if (CardNumber != CardNumberOld){
         
+        setTimeout(() => {
+            FlipCards(IdName,IdNameOld,'BackSideOfCard.jpg')
+        },  2000);
+        FlippedAmount = 0;
+
     }
 
 }
@@ -75,28 +89,22 @@ function CheckMatch(CardNumber,CardNumberOld){
 var FlippedAmount = 0;
 
 function CardClicked(IdName, NewPicture,CardNumber){
-    NewPicture = CardsCharacterChecker(CardNumber)
-    ChangeImage(IdName,NewPicture)
-    FlippedAmount++
-    
-    if (FlippedAmount == 2){
+    if (FlippedAmount < 2){
+        NewPicture = CardsCharacterChecker(CardNumber)
+        ChangeImage(IdName,NewPicture)
+        FlippedAmount++
 
-        setTimeout(() => {
-            FlipCards(IdName,IdNameOld,'BackSideOfCard.jpg')
-        },  2000);
-        FlippedAmount = 0
-    
 
+        if (FlippedAmount == 1){
+            IdNameOld = IdName;
+            CardNumberOld = CardNumber;
+        }
+        if (FlippedAmount == 2){
+            CheckMatch(CardNumber,CardNumberOld,IdNameOld,IdName)
+        }
     }
-    else if (FlippedAmount == 1){
-        return IdNameOld = IdName;
-    }
-    if (FlippedAmount == 1){
-        return CardNumberOld = CardNumber;
-    }
-
     
-
+    else alert("Vent lige til kortene har vendt")
 
 }
 
