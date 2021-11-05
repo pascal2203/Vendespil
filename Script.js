@@ -11,7 +11,7 @@ var Card7 = 0;
 var Card8 = 0;
 var Card9 = 0;
 var Card10 = 0;
-
+var CardNumberOld = 0;
 
 var CardSignatures = [1,2,3,4,5,1,2,3,4,5];
 var Cards = [Card1,Card2,Card3,Card4,Card5,Card6,Card7,Card8,Card9,Card10];
@@ -61,6 +61,13 @@ function CardsCharacterChecker(CardNumber){
             return 'ThorCard.jpg'
         }
     }
+function CheckMatch(CardNumber,CardNumberOld){
+
+    if (CardNumber == CardNumberOld){
+        
+    }
+
+}
 
 
 
@@ -83,7 +90,10 @@ function CardClicked(IdName, NewPicture,CardNumber){
     }
     else if (FlippedAmount == 1){
         return IdNameOld = IdName;
-    } 
+    }
+    if (FlippedAmount == 1){
+        return CardNumberOld = CardNumber;
+    }
 
     
 
