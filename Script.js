@@ -63,11 +63,21 @@ function CardsCharacterChecker(CardNumber){
         }
     }
 
+function RemoveCard(IdName, IdNameOld){
+    Remover = document.getElementById(IdName);
+    Remover2 = document.getElementById(IdNameOld);
+    Remover.remove();
+    Remover2.remove();
+}
+
 function CheckMatch(CardNumber,CardNumberOld,IdName,IdNameOld){
 
     if (Cards[CardNumber] == Cards[CardNumberOld]){
         score++
         Score.innerHTML = score;
+        setTimeout(() => {
+            RemoveCard(IdName,IdNameOld)
+        },  1500);
         FlippedAmount = 0;
 
     }
@@ -76,7 +86,7 @@ function CheckMatch(CardNumber,CardNumberOld,IdName,IdNameOld){
         
         setTimeout(() => {
             FlipCards(IdName,IdNameOld,'BackSideOfCard.jpg')
-        },  2000);
+        },  1500);
         FlippedAmount = 0;
 
     }
