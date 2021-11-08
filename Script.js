@@ -17,25 +17,7 @@ var score = 0;
 var CardSignatures = [1,2,3,4,5,1,2,3,4,5];
 var Cards = [Card1,Card2,Card3,Card4,Card5,Card6,Card7,Card8,Card9,Card10];
 
-/*var iii = 10;
-var ii = 0;
-for (i = 0; i < Cards.length; i++){
 
-    var MAX = iii;
-
-    var initialRandom = Math.random();
-
-    var multiplied = initialRandom * MAX;
-
-    var iiii = Math.floor(multiplied);
-    Cards[ii] = CardSignatures[iiii];
-    console.log(Cards)
-    //console.log(Cards[ii])
-    CardSignatures.splice(iiii,1);
-    ii++;
-    iii--;
-    
-}*/
 CardShuffler();
 function CardShuffler(){
     var CardSignaturesSkabelon = [1,2,3,4,5,1,2,3,4,5];
@@ -120,8 +102,8 @@ function CheckMatch(CardNumber,CardNumberOld,IdName,IdNameOld){
         Score.innerHTML = score;
         setTimeout(() => {
             RemoveCard(IdName,IdNameOld)
+            FlippedAmount = 0;
         },  1500);
-        FlippedAmount = 0;
         ClearBoardChecker++
         if (ClearBoardChecker == 5){
             alert("Vent venligst på at brættet genstarter")
@@ -136,8 +118,8 @@ function CheckMatch(CardNumber,CardNumberOld,IdName,IdNameOld){
         
         setTimeout(() => {
             FlipCards(IdName,IdNameOld,'BackSideOfCard.jpg')
+            FlippedAmount = 0;
         },  1500);
-        FlippedAmount = 0;
 
     }
 
@@ -151,6 +133,9 @@ var DobbeltTapChecker = 0;
 function CardClicked(IdName, NewPicture,CardNumber){
     if (IdName == DobbeltTapChecker){
         alert("Vælg et andet kort")
+    }
+    else if (FlippedAmount == 2){
+        alert ("vent til kortene er vendt med at klikke igen")
     }
     else if (FlippedAmount < 2){
         DobbeltTapChecker = 0;
