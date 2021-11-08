@@ -17,7 +17,7 @@ var score = 0;
 var CardSignatures = [1,2,3,4,5,1,2,3,4,5];
 var Cards = [Card1,Card2,Card3,Card4,Card5,Card6,Card7,Card8,Card9,Card10];
 
-var iii = 10;
+/*var iii = 10;
 var ii = 0;
 for (i = 0; i < Cards.length; i++){
 
@@ -34,9 +34,35 @@ for (i = 0; i < Cards.length; i++){
     CardSignatures.splice(iiii,1);
     ii++;
     iii--;
-
     
+}*/
+CardShuffler();
+function CardShuffler(){
+    var CardSignaturesSkabelon = [1,2,3,4,5,1,2,3,4,5];
+    var iii = 10;
+    var ii = 0;
+    CardSignatures = CardSignaturesSkabelon;
+
+    for (i = 0; i < Cards.length; i++){
+
+        var MAX = iii;
+    
+        var initialRandom = Math.random();
+    
+        var multiplied = initialRandom * MAX;
+    
+        var iiii = Math.floor(multiplied);
+        Cards[ii] = CardSignatures[iiii];
+        console.log(Cards)
+        //console.log(Cards[ii])
+        CardSignatures.splice(iiii,1);
+        ii++;
+        iii--;
+        
+    }
 }
+//function GameRestart()
+
 function CardsCharacterChecker(CardNumber){
         debugger
 
@@ -66,10 +92,27 @@ function CardsCharacterChecker(CardNumber){
 function RemoveCard(IdName, IdNameOld){
     Remover = document.getElementById(IdName);
     Remover2 = document.getElementById(IdNameOld);
-    Remover.remove();
-    Remover2.remove();
+    Remover.style.display = 'none';  
+    Remover2.style.display = 'none';
+
+    /*Remover.remove();
+    Remover2.remove();*/
 }
 
+var CardsID = ['Card1Picture','Card2Picture','Card3Picture','Card4Picture','Card5Picture','Card6Picture','Card7Picture','Card8Picture','Card9Picture','Card10Picture']
+
+function ShowCardAgain(){
+    debugger
+    CardShuffler();
+
+    for (i = 0; i <CardsID.length; i++){
+        Adder = document.getElementById(CardsID[i]);
+        Adder.style.display = 'initial'; 
+        ChangeImage(CardsID[i],'BackSideOfCard.jpg')          
+
+    }
+}
+var ClearBoardChecker = 0;
 function CheckMatch(CardNumber,CardNumberOld,IdName,IdNameOld){
 
     if (Cards[CardNumber] == Cards[CardNumberOld]){
@@ -79,7 +122,14 @@ function CheckMatch(CardNumber,CardNumberOld,IdName,IdNameOld){
             RemoveCard(IdName,IdNameOld)
         },  1500);
         FlippedAmount = 0;
-
+        ClearBoardChecker++
+        if (ClearBoardChecker == 5){
+            alert("Vent venligst på at brættet genstarter")
+            setTimeout(() => {
+                ShowCardAgain();
+            }, 2000);
+            ClearBoardChecker = 0
+        }
     }
     
     else if (CardNumber != CardNumberOld){
@@ -97,9 +147,13 @@ function CheckMatch(CardNumber,CardNumberOld,IdName,IdNameOld){
 
 
 var FlippedAmount = 0;
-
+var DobbeltTapChecker = 0;
 function CardClicked(IdName, NewPicture,CardNumber){
-    if (FlippedAmount < 2){
+    if (IdName == DobbeltTapChecker){
+        alert("Vælg et andet kort")
+    }
+    else if (FlippedAmount < 2){
+        DobbeltTapChecker = 0;
         NewPicture = CardsCharacterChecker(CardNumber)
         ChangeImage(IdName,NewPicture)
         FlippedAmount++
@@ -107,6 +161,7 @@ function CardClicked(IdName, NewPicture,CardNumber){
 
         if (FlippedAmount == 1){
             IdNameOld = IdName;
+            DobbeltTapChecker = IdName;
             CardNumberOld = CardNumber;
         }
         if (FlippedAmount == 2){
