@@ -47,18 +47,18 @@ function CardShuffler(){
 
 function CardsCharacterChecker(CardNumber){
 
-        if (Cards[CardNumber] == 1 ||Cards[CardNumber] == 'CaptainAmericaCard.jpg'){
-            Cards[CardNumber] = 'CaptainAmericaCard.jpg'
-            return 'CaptainAmericaCard.jpg'
+        if (Cards[CardNumber] == 1 ||Cards[CardNumber] == 'CaptainAmericaHead.jpg'){
+            Cards[CardNumber] = 'CaptainAmericaHead.jpg'
+            return 'CaptainAmericaHead.jpg'
         }
     
         else if (Cards[CardNumber] == 2||Cards[CardNumber] == 'HulkCard.jpg'){
             Cards[CardNumber] = 'HulkCard.jpg'
             return 'HulkCard.jpg'
         }
-        else if (Cards[CardNumber] == 3||Cards[CardNumber] == 'IronManCard.jpg'){
-            Cards[CardNumber] = 'IronManCard.jpg'
-            return 'IronManCard.jpg'
+        else if (Cards[CardNumber] == 3||Cards[CardNumber] == 'IronManHead.jpg'){
+            Cards[CardNumber] = 'IronManHead.jpg'
+            return 'IronManHead.jpg'
         }
         else if (Cards[CardNumber] == 4||Cards[CardNumber] == 'SpiderManCard.jpg'){
             Cards[CardNumber] = 'SpiderManCard.jpg'

@@ -13,7 +13,7 @@ function draw() {
     // draw a red line
     ctx.beginPath();
     ctx.moveTo(0, 100);
-    ctx.lineTo(900, 100);
+    ctx.lineTo(1500, 100);
     ctx.stroke();
 
 }
