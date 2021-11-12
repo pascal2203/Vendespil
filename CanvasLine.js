@@ -1,5 +1,5 @@
 function draw() {
-    const canvas = document.querySelector('#canvas');
+    const canvas = document.querySelector('#board');
 
     if (!canvas.getContext) {
         return;

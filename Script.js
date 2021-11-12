@@ -46,7 +46,6 @@ function CardShuffler(){
 //function GameRestart()
 
 function CardsCharacterChecker(CardNumber){
-        debugger
 
         if (Cards[CardNumber] == 1 ||Cards[CardNumber] == 'CaptainAmericaCard.jpg'){
             Cards[CardNumber] = 'CaptainAmericaCard.jpg'
