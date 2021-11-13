@@ -1,7 +1,7 @@
 body {
     background: #111;
     color: #ffffff;
-    background-image: url("HeroBackground.jpg");
+    /*background-image: url("HeroBackground.jpg");*/
 
   }
 
@@ -15,9 +15,12 @@ body {
     top: 0px;
     left: 320px
   }
-  canvas {
-    background: #e29e1e;
-    background-image: url("CanvasBackground.jpg");
+  
+
+  #board {
+    background-color: rgba(109, 51, 28, 0.938);
+    /*background: #a15106;
+    /*background-image: url("CanvasBackground.jpg");*/
     padding: 0;
     margin: 0 auto;
     margin-bottom: 1rem;
@@ -88,6 +91,23 @@ body {
     position: absolute;
     top: 455px;
     left: 1020px;
+
+}
+
+#Score{
+  vertical-align: middle;
+  text-align: center;
+  padding-top: 10px;
+  margin-bottom: 10px;
+  font-size: 25px;
+  border:0px solid;
+  border-radius:10px;
+  background-color:rgb(182, 202, 255);
+  width:85px;
+  height:35px; 
+  position: absolute;
+    top: 15px;
+    left: 390px;
 
 }
 
