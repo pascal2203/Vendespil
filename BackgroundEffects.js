@@ -26,8 +26,10 @@ function drawcloud(cloudyPosition, cloudWidth,CloudHeight){
 
     var ctx = c.getContext("2d");
     var img = document.getElementById("Cloud");
+    debugger
     ctx.drawImage(img, cloudXPosition, cloudyPosition, cloudWidth,CloudHeight);
     cloudXPosition++;
+
 }
 
 function Gamedrawer(){
@@ -45,12 +47,10 @@ function Gamedrawer(){
     drawgame(0,100,330,500,"blue");// venstre
     drawgame(1165,100,335,500,"blue");// midten
     drawgame(315,100,870,500,"blue"); // højre
-    drawcloud(cloudXPosition,100,150,100)
-    drawcloud(cloudXPosition,150,250,150)
+    drawcloud(100,150,100)
+    drawcloud(150,250,150)
     drawgame(315,125,870,550, "brown");// venstre
-
 }
-
 /*drawgame(0,600,330,100,"green");// venstre
 drawgame(1165,600,335,100,"green");// højre
 drawgame(315,600,870,100,"green"); // midten
