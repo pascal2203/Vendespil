@@ -1,3 +1,12 @@
+// Mål
+/*
+Få sat skyer op som classes
+Lav en sky class med en move metode som kan kaldes i game draweren
+Se om man kan få noget til at komme ud af skyerne som fx regn
+
+*/
+
+
 //to set up canvas and context:
 function drawgame(xpos,ypos,width,height, colour) {
     var c = document.querySelector('#board')
@@ -40,9 +49,9 @@ function Gamedrawer(){
     var ctx = c.getContext("2d");
     ctx.clearRect(0, 0, 10000, 10000);
 
-    drawgame(0,600,330,100,"green");// venstre
-    drawgame(1165,600,335,100,"green");// højre
-    drawgame(315,600,870,100,"green"); // midten
+    drawgame(0,600,1500,100,"green");// venstre
+    //drawgame(1165,600,335,100,"green");// højre
+    //drawgame(315,600,870,100,"green"); // midten
     drawgame(0,100,330,500,"blue");// venstre
     drawgame(1165,100,335,500,"blue");// midten
     drawgame(315,100,870,500,"blue"); // højre
