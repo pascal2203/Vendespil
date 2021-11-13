@@ -47,26 +47,26 @@ function CardShuffler(){
 
 function CardsCharacterChecker(CardNumber){
 
-        if (Cards[CardNumber] == 1 ||Cards[CardNumber] == 'CaptainAmericaHead.jpg'){
-            Cards[CardNumber] = 'CaptainAmericaHead.jpg'
-            return 'CaptainAmericaHead.jpg'
+        if (Cards[CardNumber] == 1 ||Cards[CardNumber] == 'BigTurtleDude.jpg'){
+            Cards[CardNumber] = 'BigTurtleDude.jpg'
+            return 'BigTurtleDude.jpg'
         }
     
-        else if (Cards[CardNumber] == 2||Cards[CardNumber] == 'HulkCard.jpg'){
-            Cards[CardNumber] = 'HulkCard.jpg'
-            return 'HulkCard.jpg'
+        else if (Cards[CardNumber] == 2||Cards[CardNumber] == 'Flyveting.jpg'){
+            Cards[CardNumber] = 'Flyveting.jpg'
+            return 'Flyveting.jpg'
         }
-        else if (Cards[CardNumber] == 3||Cards[CardNumber] == 'IronManHead.jpg'){
-            Cards[CardNumber] = 'IronManHead.jpg'
-            return 'IronManHead.jpg'
+        else if (Cards[CardNumber] == 3||Cards[CardNumber] == 'Stego.jpg'){
+            Cards[CardNumber] = 'Stego.jpg'
+            return 'Stego.jpg'
         }
-        else if (Cards[CardNumber] == 4||Cards[CardNumber] == 'SpiderManCard.jpg'){
-            Cards[CardNumber] = 'SpiderManCard.jpg'
-            return 'SpiderManCard.jpg'
+        else if (Cards[CardNumber] == 4||Cards[CardNumber] == 'TRex.jpg'){
+            Cards[CardNumber] = 'TRex.jpg'
+            return 'TRex.jpg'
         }
-        else if (Cards[CardNumber] == 5||Cards[CardNumber] == 'ThorCard.jpg'){
-            Cards[CardNumber] = 'ThorCard.jpg'
-            return 'ThorCard.jpg'
+        else if (Cards[CardNumber] == 5||Cards[CardNumber] == 'Langhals.jpg'){
+            Cards[CardNumber] = 'Langhals.jpg'
+            return 'Langhals.jpg'
         }
     }
 
@@ -89,7 +89,7 @@ function ShowCardAgain(){
     for (i = 0; i <CardsID.length; i++){
         Adder = document.getElementById(CardsID[i]);
         Adder.style.display = 'initial'; 
-        ChangeImage(CardsID[i],'BackSideOfCard.jpg')          
+        ChangeImage(CardsID[i],'BagsideKort.jpg')          
 
     }
 }
@@ -116,7 +116,7 @@ function CheckMatch(CardNumber,CardNumberOld,IdName,IdNameOld){
     else if (CardNumber != CardNumberOld){
         
         setTimeout(() => {
-            FlipCards(IdName,IdNameOld,'BackSideOfCard.jpg')
+            FlipCards(IdName,IdNameOld,'BagsideKort.jpg')
             FlippedAmount = 0;
         },  1500);
 
@@ -161,7 +161,7 @@ function CardClicked(IdName, NewPicture,CardNumber){
 
 
 function FlipCards(IdName, IdNameOld){
-    ChangeImage(IdName,'BackSideOfCard.jpg')          
-    ChangeImage(IdNameOld,'BackSideOfCard.jpg')
+    ChangeImage(IdName,'BagsideKort.jpg')          
+    ChangeImage(IdNameOld,'BagsideKort.jpg')
 }
 
