@@ -11,32 +11,6 @@ function drawgame(xpos,ypos,width,height, colour) {
 
 }
 
-/*
-let cloudspeed = 0;
-function drawcloud(cloudXPosition,cloudyPosition, cloudWidth,CloudHeight){
-    var c = document.querySelector('#board')
-
-    if (!c.getContext) {
-        return;
-    }
-
-    var ctx = c.getContext("2d");
-    var img = document.getElementById("Cloud");
-    debugger
-    cloudspeed++;
-    ctx.drawImage(img, cloudXPosition, cloudyPosition, cloudWidth,CloudHeight);
-
-}*/
-
-
-// Mål
-/*
-Få sat skyer op som classes
-Lav en sky class med en move metode som kan kaldes i game draweren
-Se om man kan få noget til at komme ud af skyerne som fx regn
-
-*/
-
 class Cloud{
 
     constructor(cloudXPosition,cloudyPosition, cloudWidth,CloudHeight,speed){
