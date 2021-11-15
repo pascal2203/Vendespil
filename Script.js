@@ -114,10 +114,11 @@ function CheckMatch(CardNumber,CardNumberOld,IdName,IdNameOld){
     }
     
     else if (CardNumber != CardNumberOld){
-        
+        ChangeImage('Cloud',"AngryCloud.jpg")          
         setTimeout(() => {
             FlipCards(IdName,IdNameOld,'BagsideKort.jpg')
             FlippedAmount = 0;
+            ChangeImage('Cloud',"Cloud.jpg")          
         },  1500);
 
     }

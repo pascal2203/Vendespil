@@ -85,3 +85,5 @@ function Gamedrawer(){
     drawgame(315,125,870,550, "brown");// venstre
 
 }
+
+
