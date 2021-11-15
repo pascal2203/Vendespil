@@ -10,6 +10,26 @@ function drawgame(xpos,ypos,width,height, colour) {
     ctx.fillRect(xpos,ypos,width,height);
 
 }
+function DrawCanvasline() {
+    const canvas = document.querySelector('#board');
+
+    if (!canvas.getContext) {
+        return;
+    }
+    const ctx = canvas.getContext('2d');
+
+    // set line stroke and line width
+    ctx.strokeStyle = 'white';
+    ctx.lineWidth = 5;
+
+    // draw a red line
+    ctx.beginPath();
+    ctx.moveTo(0, 100);
+    ctx.lineTo(1500, 100);
+    ctx.stroke();
+
+}
+
 
 class Cloud{
 
@@ -81,7 +101,8 @@ function Gamedrawer(){
         CloudSpawner[i].SpeedOfCloud();
         CloudSpawner[i].DrawCloud();
     }
-    
+    DrawCanvasline();
+
     drawgame(315,125,870,550, "brown");// venstre
 
 }

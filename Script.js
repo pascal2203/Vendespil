@@ -81,6 +81,7 @@ function RemoveCard(IdName, IdNameOld){
 }
 
 var CardsID = ['Card1Picture','Card2Picture','Card3Picture','Card4Picture','Card5Picture','Card6Picture','Card7Picture','Card8Picture','Card9Picture','Card10Picture']
+var audio = new Audio('LynLyd.mp3')
 
 function ShowCardAgain(){
     debugger
@@ -114,16 +115,24 @@ function CheckMatch(CardNumber,CardNumberOld,IdName,IdNameOld){
     }
     
     else if (CardNumber != CardNumberOld){
-        ChangeImage('Cloud',"AngryCloud.jpg")          
+        ChangeImage('Cloud',"AngryCloud.jpg")   
+        audio.play();       
         setTimeout(() => {
             FlipCards(IdName,IdNameOld,'BagsideKort.jpg')
             FlippedAmount = 0;
-            ChangeImage('Cloud',"Cloud.jpg")          
-        },  1500);
+        },  2000);
+        setTimeout(() =>{
+            ChangeImage('Cloud',"Cloud.jpg")        
+            audio.pause(); 
+            audio.currentTime = 0; 
+
+        }, 4000);
 
     }
 
 }
+
+
 
 
 
