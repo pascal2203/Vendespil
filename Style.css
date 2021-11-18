@@ -27,6 +27,14 @@ body {
     position: absolute;
   top: 22%;
   left: 22.4%;
+  outline-width: 5px;
+  outline-color: black;
+  outline-offset: -4px;
+  outline-style: solid
+;  /*border-width: 5px;
+  border-style: solid;
+  offset-position: 5px;
+  border-color: black;*/
 
 }
 
@@ -34,58 +42,86 @@ body {
     position: absolute;
     top: 22%;
     left: 33.6%;
-
+    outline-width: 5px;
+    outline-color: black;
+    outline-offset: -4px;
+    outline-style: solid
 }
 #Card3 {
     position: absolute;
     top: 22%;
     left: 44.8%;
-
+    outline-width: 5px;
+    outline-color: black;
+    outline-offset: -4px;
+    outline-style: solid
 }
 
 #Card4 {
     position: absolute;
     top: 22%;
     left: 56%;
-
+    outline-width: 5px;
+    outline-color: black;
+    outline-offset: -4px;
+    outline-style: solid
 }
 #Card5 {
     position: absolute;
     top: 22%;
     left: 67.2%;
-
+    outline-width: 5px;
+    outline-color: black;
+    outline-offset: -4px;
+    outline-style: solid
 }
 
 #Card6 {
     position: absolute;
     top: 64.5%;
     left: 22.4%;
-
+    outline-width: 5px;
+    outline-color: black;
+    outline-offset: -4px;
+    outline-style: solid
 }
 
 #Card7 {
     position: absolute;
     top: 64.5%;
     left: 33.6%;
-
+    outline-width: 5px;
+    outline-color: black;
+    outline-offset: -4px;
+    outline-style: solid
 }
 #Card8 {
     position: absolute;
     top: 64.5%;
     left: 44.8%;
+    outline-width: 5px;
+    outline-color: black;
+    outline-offset: -4px;
+    outline-style: solid
 }
 
 #Card9 {
     position: absolute;
     top: 64.5%;
     left: 56%;
-
+    outline-width: 5px;
+    outline-color: black;
+    outline-offset: -4px;
+    outline-style: solid
 }
 #Card10 {
     position: absolute;
     top: 64.5%;
     left: 67.2%;
-
+    outline-width: 5px;
+    outline-color: black;
+    outline-offset: -4px;
+    outline-style: solid
 }
 
 #Score{

@@ -103,7 +103,7 @@ function Gamedrawer(){
     }
     DrawCanvasline();
 
-    drawgame(315,125,870,550, "brown");// venstre
+    //drawgame(315,125,870,550, "brown");// venstre
 
 }
 
