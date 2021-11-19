@@ -1,4 +1,14 @@
 
+
+
+
+
+
+
+
+
+
+
 var Card1 = 0;
 var Card2 = 0;
 var Card3 = 0;
@@ -178,3 +188,18 @@ function FlipCards(IdName, IdNameOld){
     ChangeImage(IdNameOld,'BagsideKort.jpg')
 }
 
+
+var cardamount = 10;
+var knapnr = 0;
+function CreateCardButtons(){
+
+    for (i = 0; i <= cardamount; i++){
+        let i = document.createElement("button");
+        i.onclick = function () {
+            alert("Button is clicked");
+    };
+    document.body.appendChild(i);
+
+    }
+}
+CreateCardButtons()

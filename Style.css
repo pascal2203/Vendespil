@@ -14,6 +14,18 @@ body {
     left: 21%;
   }
   
+  button{
+    width: 100px;
+    height: 100px;
+    position: fixed;
+    top: 22.4%;
+    left: 10%;
+    outline-width: 5px;
+    outline-color: black;
+    outline-offset: -4px;
+    outline-style: solid
+  }
+
 
   #board {
     background-color: rgba(87, 32, 11, 0.938);
