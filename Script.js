@@ -1,6 +1,4 @@
 
-
-
 var Card1 = 0;
 var Card2 = 0;
 var Card3 = 0;
@@ -82,6 +80,8 @@ function RemoveCard(IdName, IdNameOld){
 
 var CardsID = ['Card1Picture','Card2Picture','Card3Picture','Card4Picture','Card5Picture','Card6Picture','Card7Picture','Card8Picture','Card9Picture','Card10Picture']
 var audio = new Audio('LynLyd.mp3')
+audio.currentTime = 1; 
+
 
 function ShowCardAgain(){
     debugger
@@ -94,6 +94,7 @@ function ShowCardAgain(){
 
     }
 }
+let AngryCloudChecker = 0;
 var ClearBoardChecker = 0;
 function CheckMatch(CardNumber,CardNumberOld,IdName,IdNameOld){
 
@@ -116,7 +117,8 @@ function CheckMatch(CardNumber,CardNumberOld,IdName,IdNameOld){
     
     else if (CardNumber != CardNumberOld){
         ChangeImage('Cloud',"AngryCloud.jpg")   
-        audio.play();       
+        audio.play();
+        AngryCloudChecker = 1     
         setTimeout(() => {
             FlipCards(IdName,IdNameOld,'BagsideKort.jpg')
             FlippedAmount = 0;
@@ -124,9 +126,10 @@ function CheckMatch(CardNumber,CardNumberOld,IdName,IdNameOld){
         setTimeout(() =>{
             ChangeImage('Cloud',"Cloud.jpg")        
             audio.pause(); 
-            audio.currentTime = 0; 
+            audio.currentTime = 1; 
+            AngryCloudChecker = 0  
 
-        }, 4000);
+        }, 3000);
 
     }
 

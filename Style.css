@@ -123,6 +123,14 @@ body {
     outline-offset: -4px;
     outline-style: solid
 }
+#Logo{
+  position: absolute;
+    top: 1.5%;
+    left: 68%;
+  width: 90px;
+  height: 90px;
+}
+
 
 #Score{
   vertical-align: middle;
@@ -136,8 +144,8 @@ body {
   width:85px;
   height:35px; 
   position: absolute;
-    top: 15px;
-    left: 390px;
+    top: 2%;
+    left: 25.5%;
 
 }
 

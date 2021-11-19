@@ -62,7 +62,15 @@ class Cloud{
 
         var ctx = c.getContext("2d");
         var img = document.getElementById("Cloud");
-        ctx.drawImage(img, this.cloudXPosition+this.speed, this.cloudyPosition, this.cloudWidth,this.CloudHeight);
+
+        if (AngryCloudChecker == 0)[
+            ctx.drawImage(img, this.cloudXPosition+this.speed, this.cloudyPosition, this.cloudWidth,this.CloudHeight)
+
+        ]
+        else if (AngryCloudChecker == 1)[
+            ctx.drawImage(img, this.cloudXPosition+this.speed, this.cloudyPosition, this.cloudWidth+this.cloudWidth,this.CloudHeight+this.CloudHeight)
+
+        ]
 
     }
 }
