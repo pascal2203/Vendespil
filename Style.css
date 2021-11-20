@@ -13,13 +13,13 @@ body {
     top: 0px;
     left: 21%;
   }
-  
+
   button{
     width: 100px;
     height: 100px;
     position: fixed;
-    top: 22.4%;
-    left: 10%;
+      top: 22.4%;
+      left: 10%;
     outline-width: 5px;
     outline-color: black;
     outline-offset: -4px;

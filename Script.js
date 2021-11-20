@@ -192,10 +192,11 @@ function FlipCards(IdName, IdNameOld){
 var cardamount = 10;
 var knapnr = 0;
 function CreateCardButtons(){
-
+    
     for (i = 0; i <= cardamount; i++){
+
         let i = document.createElement("button");
-        i.onclick = function () {
+            i.onclick = function () {
             alert("Button is clicked");
     };
     document.body.appendChild(i);
@@ -203,3 +204,4 @@ function CreateCardButtons(){
     }
 }
 CreateCardButtons()
+var CardPlacer = 5;
