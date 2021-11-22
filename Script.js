@@ -226,6 +226,7 @@ function CreateCardButtons(){
     for (ii = 0; ii <= cardamount; ii++){
         let img = document.createElement("img");
         img.src = "Logo.jpg";
+        img.id = jjj
         img.width = 155
         img.height = 155
 
