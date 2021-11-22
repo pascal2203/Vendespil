@@ -189,19 +189,52 @@ function FlipCards(IdName, IdNameOld){
 }
 
 
-var cardamount = 10;
+
+
+
+
+
+
+
+var cardamount = 100-1;
 var knapnr = 0;
+var IdGiver = [];
+var jj = 0
+var jjj = 0
 function CreateCardButtons(){
-    
-    for (i = 0; i <= cardamount; i++){
-
-        let i = document.createElement("button");
-            i.onclick = function () {
-            alert("Button is clicked");
-    };
-    document.body.appendChild(i);
-
+    for (j = 0; j <= cardamount; j++){
+        IdGiver.push(j)
     }
+
+
+    for (i = 0; i <= cardamount; i++){
+        let i = document.createElement("button");
+
+            i.id= IdGiver[jj]
+            i.name = "CardCardCard"
+
+            i.onclick = function () {
+            alert("Button is clicked");  
+              }
+        document.getElementById("CardStacker").appendChild(i);
+        jj++
+
+
+    };
+    for (ii = 0; ii <= cardamount; ii++){
+        let img = document.createElement("img");
+        img.src = "Logo.jpg";
+        img.width = 155
+        img.height = 155
+
+        document.getElementById(jjj).appendChild(img);
+        jjj++
+
+    };
+
 }
+
+
+
 CreateCardButtons()
 var CardPlacer = 5;

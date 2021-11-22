@@ -14,7 +14,7 @@ body {
     left: 21%;
   }
 
-  button{
+  /*button{
     width: 100px;
     height: 100px;
     position: fixed;
@@ -24,8 +24,34 @@ body {
     outline-color: black;
     outline-offset: -4px;
     outline-style: solid
-  }
+  }*/
 
+#CardStacker{
+  width: 1500px;
+  height: 900px;
+  position: fixed;
+  top: 15.7%;
+  left: 0.65%;
+}
+
+
+
+button{
+  background:none;
+  position: relative;
+  top: 0%;
+  left: 0%;
+  border-width: 5%;
+  border-style: solid;
+  }
+  button.okay{
+    background-image: url('BagsideKort.jpg');
+    background-repeat: no-repeat;
+    background-size: 115%;
+    background-position-x: 60%;
+    background-position-y: 20%;
+
+    }
 
   #board {
     background-color: rgba(87, 32, 11, 0.938);
@@ -35,7 +61,7 @@ body {
     display: block;
   }
 
-  #Card1 {
+ /* #Card1 {
     position: absolute;
   top: 22%;
   left: 22.4%;
@@ -43,10 +69,10 @@ body {
   outline-color: black;
   outline-offset: -4px;
   outline-style: solid
-;  /*border-width: 5px;
+;border-width: 5px;
   border-style: solid;
   offset-position: 5px;
-  border-color: black;*/
+  border-color: black;
 
 }
 
@@ -134,7 +160,7 @@ body {
     outline-color: black;
     outline-offset: -4px;
     outline-style: solid
-}
+}*/
 #Logo{
   position: absolute;
     top: 1.5%;
