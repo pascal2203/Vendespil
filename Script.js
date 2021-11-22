@@ -151,8 +151,9 @@ function CheckMatch(CardNumber,CardNumberOld,IdName,IdNameOld){
 
 
 var FlippedAmount = 0;
-var DobbeltTapChecker = 0;
+var DobbeltTapChecker = -1;
 function CardClicked(IdName, NewPicture,CardNumber){
+    debugger
     if (IdName == DobbeltTapChecker){
         alert("Vælg et andet kort")
     }
@@ -160,7 +161,7 @@ function CardClicked(IdName, NewPicture,CardNumber){
         alert ("vent til kortene er vendt med at klikke igen")
     }
     else if (FlippedAmount < 2){
-        DobbeltTapChecker = 0;
+        DobbeltTapChecker = -1;
         NewPicture = CardsCharacterChecker(CardNumber)
         ChangeImage(IdName,NewPicture)
         FlippedAmount++
@@ -194,9 +195,9 @@ function FlipCards(IdName, IdNameOld){
 
 
 
+var person = prompt("Skriv hvor mange kort du vil have", "");
 
-
-var cardamount = 100-1;
+var cardamount = 10-1;
 var knapnr = 0;
 var IdGiver = [];
 var jj = 0
@@ -213,8 +214,9 @@ function CreateCardButtons(){
             i.id= IdGiver[jj]
             i.name = "CardCardCard"
 
+            CardNumberGiver = IdGiver[jj]
             i.onclick = function () {
-            alert("Button is clicked");  
+            CardClicked(this.id,0,this.id) 
               }
         document.getElementById("CardStacker").appendChild(i);
         jj++

@@ -37,21 +37,11 @@ body {
 
 
 button{
-  background:none;
-  position: relative;
+  position:relative;
   top: 0%;
   left: 0%;
-  border-width: 5%;
-  border-style: solid;
   }
-  button.okay{
-    background-image: url('BagsideKort.jpg');
-    background-repeat: no-repeat;
-    background-size: 115%;
-    background-position-x: 60%;
-    background-position-y: 20%;
 
-    }
 
   #board {
     background-color: rgba(87, 32, 11, 0.938);
@@ -61,106 +51,7 @@ button{
     display: block;
   }
 
- /* #Card1 {
-    position: absolute;
-  top: 22%;
-  left: 22.4%;
-  outline-width: 5px;
-  outline-color: black;
-  outline-offset: -4px;
-  outline-style: solid
-;border-width: 5px;
-  border-style: solid;
-  offset-position: 5px;
-  border-color: black;
 
-}
-
-#Card2 {
-    position: absolute;
-    top: 22%;
-    left: 33.6%;
-    outline-width: 5px;
-    outline-color: black;
-    outline-offset: -4px;
-    outline-style: solid
-}
-#Card3 {
-    position: absolute;
-    top: 22%;
-    left: 44.8%;
-    outline-width: 5px;
-    outline-color: black;
-    outline-offset: -4px;
-    outline-style: solid
-}
-
-#Card4 {
-    position: absolute;
-    top: 22%;
-    left: 56%;
-    outline-width: 5px;
-    outline-color: black;
-    outline-offset: -4px;
-    outline-style: solid
-}
-#Card5 {
-    position: absolute;
-    top: 22%;
-    left: 67.2%;
-    outline-width: 5px;
-    outline-color: black;
-    outline-offset: -4px;
-    outline-style: solid
-}
-
-#Card6 {
-    position: absolute;
-    top: 64.5%;
-    left: 22.4%;
-    outline-width: 5px;
-    outline-color: black;
-    outline-offset: -4px;
-    outline-style: solid
-}
-
-#Card7 {
-    position: absolute;
-    top: 64.5%;
-    left: 33.6%;
-    outline-width: 5px;
-    outline-color: black;
-    outline-offset: -4px;
-    outline-style: solid
-}
-#Card8 {
-    position: absolute;
-    top: 64.5%;
-    left: 44.8%;
-    outline-width: 5px;
-    outline-color: black;
-    outline-offset: -4px;
-    outline-style: solid
-}
-
-#Card9 {
-    position: absolute;
-    top: 64.5%;
-    left: 56%;
-    outline-width: 5px;
-    outline-color: black;
-    outline-offset: -4px;
-    outline-style: solid
-}
-#Card10 {
-    position: absolute;
-    top: 64.5%;
-    left: 67.2%;
-    outline-width: 5px;
-    outline-color: black;
-    outline-offset: -4px;
-    outline-style: solid
-}*/
 #Logo{
   position: absolute;
     top: 1.5%;
