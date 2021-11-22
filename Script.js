@@ -240,4 +240,3 @@ function CreateCardButtons(){
 
 
 CreateCardButtons()
-var CardPlacer = 5;
