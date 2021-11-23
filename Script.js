@@ -234,9 +234,14 @@ function CreateCardButtons(){
         jjj++
 
     };
+    var checker = 0;
+    for (i = 0; i <=cardamount; i++){
+        debugger
+        checker = document.getElementById(i)
+        Cardnumberchecker = checker.id
+        console.log(Cardnumberchecker)
 
 }
 
-
-
+}
 CreateCardButtons()
