@@ -28,6 +28,7 @@ var Cards = [Card1,Card2,Card3,Card4,Card5,Card6,Card7,Card8,Card9,Card10];
 
 CardShuffler();
 function CardShuffler(){
+    debugger
     var CardSignaturesSkabelon = [1,2,3,4,5,1,2,3,4,5];
     var iii = 10;
     var ii = 0;
@@ -44,7 +45,6 @@ function CardShuffler(){
         var iiii = Math.floor(multiplied);
         Cards[ii] = CardSignatures[iiii];
         console.log(Cards)
-        //console.log(Cards[ii])
         CardSignatures.splice(iiii,1);
         ii++;
         iii--;
@@ -100,7 +100,7 @@ function ShowCardAgain(){
     for (i = 0; i <CardsID.length; i++){
         Adder = document.getElementById(CardsID[i]);
         Adder.style.display = 'initial'; 
-        ChangeImage(CardsID[i],'BagsideKort.jpg')          
+        ChangeImage(CardsID[i],'Logo.jpg')          
 
     }
 }
@@ -130,7 +130,7 @@ function CheckMatch(CardNumber,CardNumberOld,IdName,IdNameOld){
         audio.play();
         AngryCloudChecker = 1     
         setTimeout(() => {
-            FlipCards(IdName,IdNameOld,'BagsideKort.jpg')
+            FlipCards(-IdName,-IdNameOld,'Logo.jpg')
             FlippedAmount = 0;
         },  2000);
         setTimeout(() =>{
@@ -163,7 +163,7 @@ function CardClicked(IdName, NewPicture,CardNumber){
     else if (FlippedAmount < 2){
         DobbeltTapChecker = -1;
         NewPicture = CardsCharacterChecker(CardNumber)
-        ChangeImage(IdName,NewPicture)
+        ChangeImage(-IdName,NewPicture)
         FlippedAmount++
 
 
@@ -185,8 +185,8 @@ function CardClicked(IdName, NewPicture,CardNumber){
 
 
 function FlipCards(IdName, IdNameOld){
-    ChangeImage(IdName,'BagsideKort.jpg')          
-    ChangeImage(IdNameOld,'BagsideKort.jpg')
+    ChangeImage(IdName,'Logo.jpg')          
+    ChangeImage(IdNameOld,'Logo.jpg')
 }
 
 
@@ -197,18 +197,19 @@ function FlipCards(IdName, IdNameOld){
 
 var person = prompt("Skriv hvor mange kort du vil have", "");
 
-var cardamount = 10-1;
+var cardamount = 10;
 var knapnr = 0;
 var IdGiver = [];
-var jj = 0
-var jjj = 0
+var jj = 1
+var jjj = 1
 function CreateCardButtons(){
+    debugger
     for (j = 0; j <= cardamount; j++){
         IdGiver.push(j)
     }
 
-
-    for (i = 0; i <= cardamount; i++){
+    debugger
+    for (i = 0; i <= cardamount-1; i++){
         let i = document.createElement("button");
 
             i.id= IdGiver[jj]
@@ -216,7 +217,7 @@ function CreateCardButtons(){
 
             CardNumberGiver = IdGiver[jj]
             i.onclick = function () {
-            CardClicked(this.id,0,this.id) 
+            CardClicked(this.id,1,this.id) 
               }
         document.getElementById("CardStacker").appendChild(i);
         jj++
@@ -226,7 +227,7 @@ function CreateCardButtons(){
     for (ii = 0; ii <= cardamount; ii++){
         let img = document.createElement("img");
         img.src = "Logo.jpg";
-        img.id = jjj
+        img.id = -jjj
         img.width = 155
         img.height = 155
 
@@ -236,7 +237,6 @@ function CreateCardButtons(){
     };
     var checker = 0;
     for (i = 0; i <=cardamount; i++){
-        debugger
         checker = document.getElementById(i)
         Cardnumberchecker = checker.id
         console.log(Cardnumberchecker)
