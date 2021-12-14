@@ -245,3 +245,8 @@ function CreateCardButtons(){
 
 }
 CreateCardButtons()
+function BetterCardShuffler(){
+
+    
+}
+
