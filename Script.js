@@ -21,14 +21,14 @@ var Card9 = 0;
 var Card10 = 0;
 var CardNumberOld = 0;
 var score = 0;
-
+/*
 var CardSignatures = [1,2,3,4,5,1,2,3,4,5];
 var Cards = [Card1,Card2,Card3,Card4,Card5,Card6,Card7,Card8,Card9,Card10];
 
 
 CardShuffler();
 function CardShuffler(){
-    debugger
+    
     var CardSignaturesSkabelon = [1,2,3,4,5,1,2,3,4,5];
     var iii = 10;
     var ii = 0;
@@ -51,29 +51,30 @@ function CardShuffler(){
         
     }
 }
+*/
 //function GameRestart()
 
 function CardsCharacterChecker(CardNumber){
 
-        if (Cards[CardNumber] == 1 ||Cards[CardNumber] == 'BigTurtleDude.jpg'){
-            Cards[CardNumber] = 'BigTurtleDude.jpg'
+        if (CardNumberr[CardNumber] == 1 ||CardNumberr[CardNumber] == 'BigTurtleDude.jpg'){
+            CardNumberr[CardNumber] = 'BigTurtleDude.jpg'
             return 'BigTurtleDude.jpg'
         }
     
-        else if (Cards[CardNumber] == 2||Cards[CardNumber] == 'Flyveting.jpg'){
-            Cards[CardNumber] = 'Flyveting.jpg'
+        else if (CardNumberr[CardNumber] == 2||CardNumberr[CardNumber] == 'Flyveting.jpg'){
+            CardNumberr[CardNumber] = 'Flyveting.jpg'
             return 'Flyveting.jpg'
         }
-        else if (Cards[CardNumber] == 3||Cards[CardNumber] == 'Stego.jpg'){
-            Cards[CardNumber] = 'Stego.jpg'
+        else if (CardNumberr[CardNumber] == 3||CardNumberr[CardNumber] == 'Stego.jpg'){
+            CardNumberr[CardNumber] = 'Stego.jpg'
             return 'Stego.jpg'
         }
-        else if (Cards[CardNumber] == 4||Cards[CardNumber] == 'TRex.jpg'){
-            Cards[CardNumber] = 'TRex.jpg'
+        else if (CardNumberr[CardNumber] == 4||CardNumberr[CardNumber] == 'TRex.jpg'){
+            CardNumberr[CardNumber] = 'TRex.jpg'
             return 'TRex.jpg'
         }
-        else if (Cards[CardNumber] == 5||Cards[CardNumber] == 'Langhals.jpg'){
-            Cards[CardNumber] = 'Langhals.jpg'
+        else if (CardNumberr[CardNumber] == 5||CardNumberr[CardNumber] == 'Langhals.jpg'){
+            CardNumberr[CardNumber] = 'Langhals.jpg'
             return 'Langhals.jpg'
         }
     }
@@ -94,13 +95,19 @@ audio.currentTime = 1;
 
 
 function ShowCardAgain(){
+    
+    BetterCardShuffler();
     debugger
-    CardShuffler();
+    var CardSpawner = [];
+    for (ii = 0; ii <= cardamount; ii++){
+        CardSpawner.push(ii)
+    }
 
-    for (i = 0; i <CardsID.length; i++){
-        Adder = document.getElementById(CardsID[i]);
+    for (i = 1; i < CardSpawner.length; i++){
+        debugger
+        Adder = document.getElementById(CardSpawner[i]);
         Adder.style.display = 'initial'; 
-        ChangeImage(CardsID[i],'Logo.jpg')          
+        ChangeImage(CardSpawner[i],'Logo.jpg')          
 
     }
 }
@@ -108,7 +115,7 @@ let AngryCloudChecker = 0;
 var ClearBoardChecker = 0;
 function CheckMatch(CardNumber,CardNumberOld,IdName,IdNameOld){
 
-    if (Cards[CardNumber] == Cards[CardNumberOld]){
+    if (CardNumberr[CardNumber] == CardNumberr[CardNumberOld]){
         score++
         Score.innerHTML = score;
         setTimeout(() => {
@@ -153,7 +160,8 @@ function CheckMatch(CardNumber,CardNumberOld,IdName,IdNameOld){
 var FlippedAmount = 0;
 var DobbeltTapChecker = -1;
 function CardClicked(IdName, NewPicture,CardNumber){
-    debugger
+    
+    
     if (IdName == DobbeltTapChecker){
         alert("Vælg et andet kort")
     }
@@ -162,7 +170,7 @@ function CardClicked(IdName, NewPicture,CardNumber){
     }
     else if (FlippedAmount < 2){
         DobbeltTapChecker = -1;
-        NewPicture = CardsCharacterChecker(CardNumber)
+        NewPicture = CardsCharacterChecker(CardNumber-1)
         ChangeImage(-IdName,NewPicture)
         FlippedAmount++
 
@@ -170,10 +178,10 @@ function CardClicked(IdName, NewPicture,CardNumber){
         if (FlippedAmount == 1){
             IdNameOld = IdName;
             DobbeltTapChecker = IdName;
-            CardNumberOld = CardNumber;
+            CardNumberOld = CardNumber-1;
         }
         if (FlippedAmount == 2){
-            CheckMatch(CardNumber,CardNumberOld,IdNameOld,IdName)
+            CheckMatch(CardNumber-1,CardNumberOld,IdNameOld,IdName)
         }
     }
     
@@ -203,12 +211,12 @@ var IdGiver = [];
 var jj = 1
 var jjj = 1
 function CreateCardButtons(){
-    debugger
+    
     for (j = 0; j <= cardamount; j++){
         IdGiver.push(j)
     }
 
-    debugger
+    
     for (i = 0; i <= cardamount-1; i++){
         let i = document.createElement("button");
 
@@ -224,7 +232,8 @@ function CreateCardButtons(){
 
 
     };
-    for (ii = 0; ii <= cardamount; ii++){
+    for (ii = 1; ii <= cardamount; ii++){
+        
         let img = document.createElement("img");
         img.src = "Logo.jpg";
         img.id = -jjj
@@ -234,9 +243,9 @@ function CreateCardButtons(){
         document.getElementById(jjj).appendChild(img);
         jjj++
 
-    };
+    };  
     var checker = 0;
-    for (i = 0; i <=cardamount; i++){
+    for (i = 1; i <=cardamount; i++){
         checker = document.getElementById(i)
         Cardnumberchecker = checker.id
         console.log(Cardnumberchecker)
@@ -245,8 +254,49 @@ function CreateCardButtons(){
 
 }
 CreateCardButtons()
+var CardNumberGiverr = []
+var CardNumberr = []
 function BetterCardShuffler(){
+    var c = 1;
+    var u = 1;
+    for (uu = 1; uu <= cardamount; uu++){
+        if (u == 5){
+            CardNumberGiverr.push(u);
+            CardNumberr.push(c);
+            var c = 1;
+            var u = 1;
 
+        }
+        else {
+            CardNumberGiverr.push(u);
+            CardNumberr.push(c);
+            c++;
+            u++;
+        }
+    }
+    var CardSignaturesSkabelon = CardNumberGiverr;
+    var iii = cardamount;
+    var ii = 0;
+    CardNumberGiverr = CardSignaturesSkabelon;
+
+    for (i = 0; i < CardNumberr.length; i++){
+
+        var MAX = iii;
+    
+        var initialRandom = Math.random();
+    
+        var multiplied = initialRandom * MAX;
+    
+        var iiii = Math.floor(multiplied);
+        CardNumberr[ii] = CardNumberGiverr[iiii];
+        console.log(CardNumberr)
+        CardNumberGiverr.splice(iiii,1);
+        ii++;
+        iii--;
+        
+    }
+    console.log(CardNumberGiverr)
+    console.log(CardNumberr)
     
 }
-
+BetterCardShuffler()
