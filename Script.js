@@ -1,58 +1,7 @@
 
-
-
-
-
-
-
-
-
-
-
-var Card1 = 0;
-var Card2 = 0;
-var Card3 = 0;
-var Card4 = 0;
-var Card5 = 0;
-var Card6 = 0;
-var Card7 = 0;
-var Card8 = 0;
-var Card9 = 0;
-var Card10 = 0;
 var CardNumberOld = 0;
 var score = 0;
-/*
-var CardSignatures = [1,2,3,4,5,1,2,3,4,5];
-var Cards = [Card1,Card2,Card3,Card4,Card5,Card6,Card7,Card8,Card9,Card10];
 
-
-CardShuffler();
-function CardShuffler(){
-    
-    var CardSignaturesSkabelon = [1,2,3,4,5,1,2,3,4,5];
-    var iii = 10;
-    var ii = 0;
-    CardSignatures = CardSignaturesSkabelon;
-
-    for (i = 0; i < Cards.length; i++){
-
-        var MAX = iii;
-    
-        var initialRandom = Math.random();
-    
-        var multiplied = initialRandom * MAX;
-    
-        var iiii = Math.floor(multiplied);
-        Cards[ii] = CardSignatures[iiii];
-        console.log(Cards)
-        CardSignatures.splice(iiii,1);
-        ii++;
-        iii--;
-        
-    }
-}
-*/
-//function GameRestart()
 
 function CardsCharacterChecker(CardNumber){
 
@@ -97,17 +46,17 @@ audio.currentTime = 1;
 function ShowCardAgain(){
     
     BetterCardShuffler();
-    debugger
+    
     var CardSpawner = [];
     for (ii = 0; ii <= cardamount; ii++){
         CardSpawner.push(ii)
     }
 
     for (i = 1; i < CardSpawner.length; i++){
-        debugger
+        
         Adder = document.getElementById(CardSpawner[i]);
         Adder.style.display = 'initial'; 
-        ChangeImage(CardSpawner[i],'Logo.jpg')          
+        ChangeImage(-CardSpawner[i],'Logo.jpg')          
 
     }
 }
