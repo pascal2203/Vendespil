@@ -72,7 +72,7 @@ function CheckMatch(CardNumber,CardNumberOld,IdName,IdNameOld){
             FlippedAmount = 0;
         },  1500);
         ClearBoardChecker++
-        if (ClearBoardChecker == 5){
+        if (ClearBoardChecker == cardamount/2){
             alert("Vent venligst på at brættet genstarter")
             setTimeout(() => {
                 ShowCardAgain();
@@ -151,10 +151,36 @@ function FlipCards(IdName, IdNameOld){
 
 
 
+var cardamount = 0;
+var AntalKort = prompt("Skriv hvor mange kort du vil have, Det skal være minimum 10 og et lige tal", "");
 
-var person = prompt("Skriv hvor mange kort du vil have", "");
+    if (AntalKort < 10){
+        cardamount = 10;
+    }
+    else if (AntalKort > 10){
+        debugger
+        
+        OddCardChecker(AntalKort)
+    }
+function OddCardChecker(AntalKort){
+ 
+    var EqualChecker = AntalKort;
+    var EqualChecker2 = AntalKort;    
 
-var cardamount = 10;
+    if (EqualChecker % 2 != 1){
+
+         return cardamount = AntalKort
+    }
+    else if (EqualChecker2 % 2 == 1){
+
+         AntalKort++
+         return cardamount = AntalKort
+    }
+    
+}
+    
+    
+
 var knapnr = 0;
 var IdGiver = [];
 var jj = 1
@@ -249,3 +275,4 @@ function BetterCardShuffler(){
     
 }
 BetterCardShuffler()
+
