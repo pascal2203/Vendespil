@@ -74,18 +74,19 @@ class Cloud{
 
     }
 }
-let Cloud1 = new Cloud(100,100,280,150,1)
-let Cloud2 = new Cloud(970,300,280,150,1)
-let Cloud3 = new Cloud(700,100,280,150,1)
-let Cloud4 = new Cloud(91,400,280,150,1)
-let Cloud5 = new Cloud(270,250,280,150,1)
-let Cloud6 = new Cloud(570,300,280,150,1)
-let Cloud7 = new Cloud(1400,350,280,150,1)
-let Cloud8 = new Cloud(700,430,280,150,1)
-let Cloud9 = new Cloud(1450,100,280,150,1)
-let Cloud10 = new Cloud(1150,100,280,150,1)
 
-let CloudSpawner =[Cloud1,Cloud2,Cloud3,Cloud4,Cloud5,Cloud6,Cloud7,Cloud8,Cloud9,Cloud10]
+let CloudSpawner =[
+    new Cloud(100,100,280,150,1),
+    new Cloud(970,300,280,150,1),
+    new Cloud(91,400,280,150,1),
+    new Cloud(91,400,280,150,1),
+    new Cloud(270,250,280,150,1),
+    new Cloud(570,300,280,150,1),
+    new Cloud(1400,350,280,150,1),
+    new Cloud(700,430,280,150,1),
+    new Cloud(1450,100,280,150,1),
+    new Cloud(1150,100,280,150,1)
+]
 
 window.onload = function () {
     setInterval(Gamedrawer, 1000/60);
@@ -102,8 +103,6 @@ function Gamedrawer(){
 
     drawgame(0,600,1500,100,"green");// venstre
     drawgame(0,100,1500,500,"blue");// venstre
-    /*drawcloud(100+cloudspeed,100,100,100)
-    drawcloud(200+cloudspeed,150,300,150)*/
     for (i = 0; i < CloudSpawner.length; i++){
 
         CloudSpawner[i].SpeedOfCloud();

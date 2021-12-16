@@ -186,8 +186,8 @@ function CreateCardButtons(){
         let img = document.createElement("img");
         img.src = "Logo.jpg";
         img.id = -jjj
-        img.width = 155
-        img.height = 155
+        img.width = 138.5
+        img.height = img.width
 
         document.getElementById(jjj).appendChild(img);
         jjj++
