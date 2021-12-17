@@ -36,38 +36,35 @@ BetterCardShuffler()
 
 //Her starter jeg med at tjekke for om den givne værdi i prompten er lige og om den er over 10
 function OddCardChecker(AntalKort){
-    debugger
  
-    var EqualChecker = AntalKort;
+    var EqualChecker = AntalKort;// Laver 2 variabler som jeg så bruger til at regne de næste if statements
     var EqualChecker2 = AntalKort;    
 
-    if (EqualChecker % 2 != 1){
+    if (EqualChecker % 2 != 1){     // Her der bruger jeg num%2 til at regne om der kommer et komma tal bagpå som der kun gør ved ulige tal
 
         FUckhead = AntalKort
          return AntalKort
-
     }
-    else if (EqualChecker2 % 2 == 1){
+    else if (EqualChecker2 % 2 == 1){ // Her er så det if statement der fanger de uligetal hvorefter jeg så lægger 1 til antalkort for at gøre tallet lige
 
          AntalKort++
          FUckhead = AntalKort
     }   
 }
 
-function CreateCardButtons(){
+function CreateCardButtons(){         // Denne her funktion bruges til at lave knapperne i html
     AntalKort = FUckhead;
     AntalKort++
-    for (j = 0; j < AntalKort; j++){
+    for (j = 0; j < AntalKort; j++){  // Her kører der et for loop som bliver brugt til at give unike id'er til knapperne
         IdGiver.push(j)
     }
     AntalKort--
-    for (i = 0; i < AntalKort; i++){
+    for (i = 0; i < AntalKort; i++){  // I dette for loop der blive knapperne lavet
         let i = document.createElement("button");
 
             i.id= IdGiver[jj]
             i.name = "CardCardCard"
 
-            CardNumberGiver = IdGiver[jj]
             i.onclick = function () {
             CardClicked(this.id,1,this.id) 
               }
@@ -75,7 +72,7 @@ function CreateCardButtons(){
         jj++
 
     }
-    for (ii = 1; ii <= AntalKort; ii++){
+    for (ii = 1; ii <= AntalKort; ii++){ // I det her foor loop der laver vi et billed og ligger det ind under knapperne vi lavede før som dets child
         
         let img = document.createElement("img");
         img.src = "Logo.jpg";
@@ -85,31 +82,45 @@ function CreateCardButtons(){
 
         document.getElementById(jjj).appendChild(img);
         jjj++
-
     }  
-    var checker = 0;
-    for (i = 1; i <=AntalKort; i++){
-        checker = document.getElementById(i)
-        Cardnumberchecker = checker.id
-
-    }
 }
 
-function BetterCardShuffler(){
+function BetterCardShuffler(){      //Det her er vores funktion til at "blande" knappernes værdier så de for en tilfældig værdi som derefter bruges til at definere dets billed
     
     var c = 1;
     var u = 1;
     CardNumberGiverr = []
     CardNumberr = []
     AntalStik = AntalKort/2;
-    if (AntalStik >= 5){
+    if (AntalStik >= 5){    // Her der tjekker vi for om der er mere end 5 stik
         
         for (uu = 1; uu <= AntalKort; uu++){
-            if (u == 5){
+            
+            if (AntalStik < 5){
+        
+                for (uu = 1; uu <= AntalKort; uu++){
+                    if (u == AntalStik){
+                        CardNumberGiverr.push(u);
+                        CardNumberr.push(c);
+                        var c = 1;
+                        var u = 1;
+                    }
+                    else {
+                        CardNumberGiverr.push(u);
+                        CardNumberr.push(c);
+                        c++;
+                        u++;
+                    }
+                }
+                AntalStik -= AntalStik
+            }
+
+            else if (u == 5){
                 CardNumberGiverr.push(u);
                 CardNumberr.push(c);
                 var c = 1;
                 var u = 1;
+                AntalStik -= 5;
             }
             else {
                 CardNumberGiverr.push(u);
@@ -118,8 +129,6 @@ function BetterCardShuffler(){
                 u++;
             }
         }
-        AntalStik -= 5;
-        console.log("Antallet af stik tilbage"+ AntalStik)
     }
     if (AntalStik < 5){
         
@@ -138,7 +147,6 @@ function BetterCardShuffler(){
             }
         }
         AntalStik -= AntalStik
-        console.log("Antallet af stik tilbage"+ AntalStik)
     }
     var CardSignaturesSkabelon = CardNumberGiverr;
     var iii = AntalKort
