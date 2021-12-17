@@ -101,8 +101,8 @@ function Gamedrawer(){
     var ctx = c.getContext("2d");
     ctx.clearRect(0, 0, 10000, 10000);
 
-    drawgame(0,600,1500,100,"green");// venstre
-    drawgame(0,100,1500,500,"blue");// venstre
+    drawgame(0,600,3500,100,"green");// venstre
+    drawgame(0,100,3500,500,"blue");// venstre
     for (i = 0; i < CloudSpawner.length; i++){
 
         CloudSpawner[i].SpeedOfCloud();
