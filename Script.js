@@ -48,7 +48,7 @@ function ShowCardAgain(){
     BetterCardShuffler();
     
     var CardSpawner = [];
-    for (ii = 0; ii <= cardamount; ii++){
+    for (ii = 0; ii <= AntalKort; ii++){
         CardSpawner.push(ii)
     }
 
@@ -72,7 +72,7 @@ function CheckMatch(CardNumber,CardNumberOld,IdName,IdNameOld){
             FlippedAmount = 0;
         },  1500);
         ClearBoardChecker++
-        if (ClearBoardChecker == cardamount/2){
+        if (ClearBoardChecker == AntalKort/2){
             alert("Vent venligst på at brættet genstarter")
             setTimeout(() => {
                 ShowCardAgain();
@@ -150,15 +150,16 @@ function FlipCards(IdName, IdNameOld){
 
 
 
-
+var FUckhead = 0;
 var cardamount = 0;
 var AntalKort = prompt("Skriv hvor mange kort du vil have, Det skal være minimum 10 og et lige tal", "");
-
+console.log("Her er mængden af kortfør loopet"+AntalKort)
+debugger
     if (AntalKort < 10){
-        cardamount = 10;
+        FUckhead = 10;
     }
     else if (AntalKort > 10){
-        debugger
+        
         
         OddCardChecker(AntalKort)
     }
@@ -169,17 +170,20 @@ function OddCardChecker(AntalKort){
 
     if (EqualChecker % 2 != 1){
 
-         return cardamount = AntalKort
+        FUckhead = AntalKort
+         return AntalKort
+
     }
     else if (EqualChecker2 % 2 == 1){
 
          AntalKort++
-         return cardamount = AntalKort
+         FUckhead = AntalKort
     }
     
 }
-    
-    
+AntalKort = FUckhead;
+
+console.log("Her er mængden af kort efter loopet"+AntalKort)
 
 var knapnr = 0;
 var IdGiver = [];
@@ -187,12 +191,12 @@ var jj = 1
 var jjj = 1
 function CreateCardButtons(){
     
-    for (j = 0; j <= cardamount; j++){
+    for (j = 0; j <= AntalKort; j++){
         IdGiver.push(j)
     }
 
     
-    for (i = 0; i <= cardamount-1; i++){
+    for (i = 0; i <= AntalKort-1; i++){
         let i = document.createElement("button");
 
             i.id= IdGiver[jj]
@@ -207,7 +211,7 @@ function CreateCardButtons(){
 
 
     };
-    for (ii = 1; ii <= cardamount; ii++){
+    for (ii = 1; ii <= AntalKort; ii++){
         
         let img = document.createElement("img");
         img.src = "Logo.jpg";
@@ -220,7 +224,7 @@ function CreateCardButtons(){
 
     };  
     var checker = 0;
-    for (i = 1; i <=cardamount; i++){
+    for (i = 1; i <=AntalKort; i++){
         checker = document.getElementById(i)
         Cardnumberchecker = checker.id
         console.log(Cardnumberchecker)
@@ -228,29 +232,58 @@ function CreateCardButtons(){
 }
 
 }
+
+var AntalStik = AntalKort/2;
+
 CreateCardButtons()
 var CardNumberGiverr = []
 var CardNumberr = []
 function BetterCardShuffler(){
     var c = 1;
     var u = 1;
-    for (uu = 1; uu <= cardamount; uu++){
-        if (u == 5){
-            CardNumberGiverr.push(u);
-            CardNumberr.push(c);
-            var c = 1;
-            var u = 1;
-
+    debugger
+    if (AntalStik >= 5){
+        
+        for (uu = 1; uu <= AntalKort; uu++){
+            if (u == 5){
+                CardNumberGiverr.push(u);
+                CardNumberr.push(c);
+                var c = 1;
+                var u = 1;
+            
+            }
+            else {
+                CardNumberGiverr.push(u);
+                CardNumberr.push(c);
+                c++;
+                u++;
+            }
         }
-        else {
-            CardNumberGiverr.push(u);
-            CardNumberr.push(c);
-            c++;
-            u++;
+        AntalStik -= 5;
+        console.log("Antallet af stik tilbage"+ AntalStik)
+    }
+    if (AntalStik < 5){
+        
+        for (uu = 1; uu <= AntalKort; uu++){
+            if (u == AntalStik){
+                CardNumberGiverr.push(u);
+                CardNumberr.push(c);
+                var c = 1;
+                var u = 1;
+            
+            }
+            else {
+                CardNumberGiverr.push(u);
+                CardNumberr.push(c);
+                c++;
+                u++;
+            }
         }
+        AntalStik -= AntalStik
+        console.log("Antallet af stik tilbage"+ AntalStik)
     }
     var CardSignaturesSkabelon = CardNumberGiverr;
-    var iii = cardamount;
+    var iii = AntalKort;
     var ii = 0;
     CardNumberGiverr = CardSignaturesSkabelon;
 
